@@ -18,6 +18,8 @@ export const Form = () => {
         id: nanoid(),
       }),
     );
+    
+    e.target.reset()
   };
 
   return (

@@ -9,6 +9,9 @@ const todosSlice = createSlice({
     addTodo: (state, action) => {
       state.items.push(action.payload);
     },
+    deleteTodo: (state, action) => {
+      state.items = state.items.filter(item => item.id !== action.payload)
+    }
   },
   selectors: {
     selectTodos: state => state.items,
@@ -16,5 +19,5 @@ const todosSlice = createSlice({
 });
 
 export const todosReducer = todosSlice.reducer;
-export const { addTodo } = todosSlice.actions;
+export const { addTodo, deleteTodo } = todosSlice.actions;
 export const { selectTodos } = todosSlice.selectors;
